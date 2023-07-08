@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
+	<title>Eo_circle_red_white_arrow-up-svg</title>
+	<style>
+		.s0 { fill: #ffffff } 
+		.s1 { fill: #3e82b7 } 
+	</style>
+	<path id="Layer" class="s0" d="m32 62c-16.6 0-30-13.4-30-30 0-16.6 13.4-30 30-30 16.6 0 30 13.4 30 30 0 16.6-13.4 30-30 30z"/>
+	<path id="Layer" fill-rule="evenodd" class="s1" d="m62 32c0 16.6-13.4 30-30 30-16.6 0-30-13.4-30-30 0-16.6 13.4-30 30-30 16.6 0 30 13.4 30 30zm-14-1.7l-16-15.3-16 15.3h10.9v18.7h10.2v-18.7z"/>
+</svg>

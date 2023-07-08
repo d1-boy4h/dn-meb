@@ -1,0 +1,292 @@
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: #3b80b7;
+    color: #fff;
+}
+
+:root {
+    --title-font: "Opium New C", serif;
+    --text-font: "Open Sans", sans-serif;
+}
+
+body {
+    font-family: var(--text-font);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-family: var(--title-font);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: 58px;
+}
+
+h3 {
+    font-size: 25px;
+    margin-bottom: 38px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+/* header ------------------------------------------------------ */
+
+.header {
+    background: url("../img/header-bg.jpg") center center / cover no-repeat;
+    padding-top: 57px;
+    color: #fff;
+    padding-bottom: 322px;
+}
+
+.logo {
+    margin-right: 60px;
+    width: 85px;
+}
+
+.header a {
+    color: #fff;
+    letter-spacing: 0.1em;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li a {
+    text-transform: uppercase;
+    font-size: 14px;
+
+    transition: all .3s ease;
+}
+
+.menu li a:hover {
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid #fff;
+}
+
+.menu li {
+    display: block;
+    margin-right: 40px;
+}
+
+.tel {
+    font-size: 17px;
+    text-decoration: none;
+    margin-left: auto;
+    text-align: right;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.offer {
+    text-transform: uppercase;
+    margin-top: 216px;
+}
+
+.offer h1 {
+    font-size: 100px;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+}
+
+.offer p {
+    font-family: var(--title-font);
+    font-size: 30px;
+    margin-bottom: 19px;
+}
+
+.btn {
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    padding: 17px 47px;
+    border: 1px solid #fff;
+    width: 270px;
+
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, .5);
+}
+
+/* about ------------------------------------------------------- */
+
+.about {
+    padding: 110px 0 67px 0;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description p, .description ul {
+    font-family: var(--text-font);
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.62em;
+    list-style-position: inside;
+}
+
+.desc-left, .desc-right {
+    width: 567px;
+}
+
+/* gallery ----------------------------------------------------- */
+
+.gallery {
+    padding: 110px 0;
+    text-align: center;
+    background: url("../img/gallery-bg2.jpg") no-repeat center center / cover fixed;
+    color: #fff;
+}
+
+.gallery h2 {
+    border-bottom: 3px solid #fff;
+    padding: 0 .7em .2em;
+    display: inline-block;
+}
+
+.gallery img {
+    max-height: 350px;
+    margin: 0 20px 20px 0;
+
+    transition: .5s;
+}
+
+.gallery img:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, .5);
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99998;
+    background-color: rgba(0, 0, 0, .3);
+    color: #000;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .4s, visibility .4s;
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal_box {
+    position: relative;
+    width: 90vw;
+    padding: 45px;
+    z-index: 1;
+    margin: 30px 15px;
+    background-color: white;
+    box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
+
+    transform: scale(0);
+
+    transition: transform .6s;
+}
+
+.modal.open .modal_box {
+    transform: scale(1);
+}
+
+.modal_box span[id^=close] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    cursor: pointer;
+    transform: scale(1.2);
+
+    transition: transform .3s;
+}
+
+.modal_box span[id^=close]:hover {
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.locked {
+    overflow: hidden;
+}
+
+/* footer --------------------------------------------------------- */
+
+.footer-text {
+    display: flex;
+    padding: 110px 0 40px;
+
+    font-family: var(--text-font);
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.footer-text p {
+    margin-right: 67px;
+}
+
+.arrow_up {
+    background-image: url("../img/arrow_up.svg");
+    background-size: contain;
+    opacity: .8;
+
+    display: block;
+    width: 64px;
+    height: 64px;
+
+    position: fixed;
+    left: 92%;
+    top: 84%;
+
+    transition: .3s;
+}
+
+.arrow_up:hover {
+    opacity: .95;
+    transform: scale(1.05);
+}
