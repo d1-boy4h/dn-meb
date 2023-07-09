@@ -8,21 +8,21 @@
         <!-- css -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/animations.css">
         <link rel="stylesheet" href="css/style.css">
         
         <!--[if lt IE 9]>
             <script src="js/html5shiv.js"></script>
         <![endif]-->
-
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="js/gallery.js"></script>
         
         <!-- LiveReload -->
         <script src="http://localhost:35729/livereload.js?snipver=1"></script>
     </head>
     <body id="body">
-        <a class="arrow_up" href="#header" title="Наверх"></a>
-        <header class="header" id="header">
+
+        <!-- Шапка -------------------------------- -->
+
+        <header id="header" class="header">
             <div class="container">
                 <nav class="nav">
                     <img class="logo" src="img/don-mebel-1.webp" alt="Дон-Мебель Краснодар">
@@ -46,24 +46,26 @@
                     <a class="tel" href="tel:+79189983763">+7 (989) 290-89-43<br>Тургеневское Шоссе, 22<br>10:00-20:00 Пн-Вс</a>
                 </nav>
                 <div class="offer">
-                    <h1>Дон-Мебель</h1>
-                    <p>Производство кухонной мебели на заказ</p>
+                    <h1 class="animation fadeInLeft">Дон-Мебель</h1>
+                    <p class="animation fadeInLeft">Производство кухонной мебели на заказ</p>
                     <a class="btn" href="#">Заказать замер</a>
                 </div>
             </div>
         </header>
 
-        <section class="about" id="about">
+        <!-- О нас -------------------------------- -->
+
+        <section id="about" class="about">
             <div class="container">
-                <h2>О нас</h2>
+                <h2 class="animation fadeInLeft">О нас</h2>
                 <div class="description">
-                    <div class="desc-left">
+                    <div class="desc-left animation fadeIn">
                         <h3>Кухни от производителя</h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita temporibus doloremque iste illum, consectetur, repudiandae porro cum fugiat exercitationem ut praesentium blanditiis dolore harum sequi eligendi consequuntur voluptatum, eos sapiente? Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Delectus, explicabo, officiis. Officiis amet voluptates mollitia voluptatibus neque, iure illum, eum. Quae, nostrum. Molestias officia, ullam soluta, repellat veritatis dignissimos fugit.
                         </p>
                     </div>
-                    <div class="desc-right">
+                    <div class="desc-right animation fadeIn">
                         <h3>Lorem Ipsum</h3>
                         <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut, officiis voluptatem a accusantium saepe velit corporis iure nemo hic praesentium sunt at nobis inventore, quos eligendi! Molestias eum, reprehenderit.
@@ -73,15 +75,23 @@
             </div>
         </section>
 
-        <section class="gallery" id="gallery">
-            <h2>Наши работы</h2>
+        <!-- Наши работы -------------------------------- -->
+
+        <section id="gallery" class="gallery">
+            <h2 class="animation fadeInUp">Наши работы</h2>
             <div class="container">
 
                 <!-- Проект 1 -->
-                <img id="open-project-1" src="img/projects/1/img1.jpg" alt="Event project 1">
+                <div id="open-project-1" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/1/img1.jpg" alt="Event project 1">
+                    <span class="project_label">Проект 1</span>
+                </div>
                 <div class="modal" id="project-1">
-                    <div class="modal_box">
+                    <div class="modal_title">
+                        <span class="modal_label">Проект 1</span>
                         <span id="close-project-1">&times;</span>
+                    </div>
+                    <div class="modal_box">
                         <img src="img/projects/1/img1.jpg" alt="Image 1">
                         <img src="img/projects/1/img2.jpg" alt="Image 2">
                         <img src="img/projects/1/img3.jpg" alt="Image 3">
@@ -93,10 +103,16 @@
                 </div>
 
                 <!-- Проект 2 -->
-                <img id="open-project-2" src="img/projects/2/img1.jpg" alt="Event project 2">
+                <div id="open-project-2" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/2/img1.jpg" alt="Event project 2">
+                    <span class="project_label">Проект 2</span>
+                </div>
                 <div class="modal" id="project-2">
+                    <div class="modal_title">
+                        <span class="modal_label">Проект 2</span>
+                        <span id="close-project-2">&times;</span>
+                    </div>
                     <div class="modal_box">
-                        <span class="close-modal" id="close-project-2">&times;</span>
                         <img src="img/projects/2/img1.jpg" alt="Image 1">
                         <img src="img/projects/2/img2.jpg" alt="Image 2">
                         <img src="img/projects/2/img3.jpg" alt="Image 3">
@@ -105,10 +121,16 @@
                 </div>
 
                 <!-- Проект 3 -->
-                <img id="open-project-3" src="img/projects/3/img5.jpg" alt="Event project 3">
+                <div id="open-project-3" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/3/img5.jpg" alt="Event project 3">
+                    <span class="project_label">Проект 3</span>
+                </div>
                 <div class="modal" id="project-3">
+                    <div class="modal_title">
+                        <span class="modal_label">Проект 3</span>
+                        <span id="close-project-3">&times;</span>
+                    </div>
                     <div class="modal_box">
-                        <span class="close-modal" id="close-project-3">&times;</span>
                         <img src="img/projects/3/img1.jpg" alt="Image 1">
                         <img src="img/projects/3/img2.jpg" alt="Image 2">
                         <img src="img/projects/3/img3.jpg" alt="Image 3">
@@ -120,10 +142,16 @@
                 </div>
 
                 <!-- Проект 4 -->
-                <img id="open-project-4" src="img/projects/4/img12.jpg" alt="Event project 4">
+                <div id="open-project-4" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/4/img12.jpg" alt="Event project 4">
+                    <span class="project_label">Проект 4</span>
+                </div>
                 <div class="modal" id="project-4">
+                    <div class="modal_title">
+                        <span class="modal_label">Проект 4</span>
+                        <span id="close-project-4">&times;</span>
+                    </div>
                     <div class="modal_box">
-                        <span class="close-modal" id="close-project-4">&times;</span>
                         <img src="img/projects/4/img1.jpg" alt="Image 1">
                         <img src="img/projects/4/img2.jpg" alt="Image 2">
                         <img src="img/projects/4/img3.jpg" alt="Image 3">
@@ -138,17 +166,103 @@
                         <img src="img/projects/4/img12.jpg" alt="Image 12">
                     </div>
                 </div>
+
+                <!-- Проект 5 -->
+                <div id="open-project-5" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/5/img1.jpg" alt="Event project 5">
+                    <span class="project_label">Проект 5</span>
+                </div>
+                <div class="modal" id="project-5">
+                    <div class="modal_title">
+                        <span class="modal_label">Проект 5</span>
+                        <span id="close-project-5">&times;</span>
+                    </div>
+                    <div class="modal_box">
+                        <img src="img/projects/5/img1.jpg" alt="Image 1">
+                        <img src="img/projects/5/img2.jpg" alt="Image 2">
+                        <img src="img/projects/5/img3.jpg" alt="Image 3">
+                    </div>
+                </div>
+
+                <!-- Проект 6 -->
+                <div id="open-project-6" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/6/img1.jpg" alt="Event project 6">
+                    <span class="project_label">Проект 6</span>
+                </div>
+                <div class="modal" id="project-6">
+                    <div class="modal_title">
+                        <span class="modal_label">Проект 6</span>
+                        <span id="close-project-6">&times;</span>
+                    </div>
+                    <div class="modal_box">
+                        <img src="img/projects/6/img1.jpg" alt="Image 1">
+                        <img src="img/projects/6/img2.jpg" alt="Image 2">
+                        <img src="img/projects/6/img3.jpg" alt="Image 3">
+                    </div>
+                </div>
+
+                <!-- Проект 7 -->
+                <div id="open-project-7" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/7/img1.jpg" alt="Event project 7">
+                    <span class="project_label">Проект 7</span>
+                </div>
+                <div class="modal" id="project-7">
+                    <div class="modal_title">
+                        <span class="modal_label">Проект 7</span>
+                        <span id="close-project-7">&times;</span>
+                    </div>
+                    <div class="modal_box">
+                        <img src="img/projects/7/img1.jpg" alt="Image 1">
+                        <img src="img/projects/7/img2.jpg" alt="Image 2">
+                        <img src="img/projects/7/img3.jpg" alt="Image 3">
+                    </div>
+                </div>
+
+                <!-- Прочие проекты -->
+                <div id="open-other-projects" class="wrapper_project animation zoomIn">
+                    <img src="img/projects/others/img2.jpg" alt="Event other projects">
+                    <span class="project_label">Прочие проекты</span>
+                </div>
+                <div class="modal" id="other-projects">
+                    <div class="modal_title">
+                        <span class="modal_label">Прочие проекты</span>
+                        <span id="close-other-projects">&times;</span>
+                    </div>
+                    <div class="modal_box">
+                        <img src="img/projects/others/img1.jpg" alt="Image 1">
+                        <img src="img/projects/others/img2.jpg" alt="Image 2">
+                        <img src="img/projects/others/img3.jpg" alt="Image 3">
+                        <img src="img/projects/others/img4.jpg" alt="Image 4">
+                        <img src="img/projects/others/img5.jpg" alt="Image 5">
+                        <img src="img/projects/others/img6.jpg" alt="Image 6">
+                        <img src="img/projects/others/img7.jpg" alt="Image 7">
+                        <img src="img/projects/others/img8.jpg" alt="Image 8">
+                        <img src="img/projects/others/img9.jpg" alt="Image 9">
+                        <img src="img/projects/others/img10.jpg" alt="Image 10">
+                    </div>
+                </div>
+
+                <h2 class="more_projects animation fadeInUp">Со временем здесь будет больше работ :)</h2>
+
             </div>
-            <script src="js/modal-projects.js"></script>
         </section>
 
-        <footer class="footer" id="footer">
+        <!-- Подвал -------------------------------- -->
+
+        <footer id="footer" class="footer">
             <div class="container">
                 <div class="footer-text">
-                    <p>©2023 Дон-Мебель Краснодар. Все права защищены.</p>
+                    <p>Дон-Мебель Краснодар © 2023<br>Все права защищены.</p>
                     <p>Mozbo & d1_boy4h</p>
                 </div>
             </div>
         </footer>
+
+        <!-- Прочие скрипты -------------------------------- -->
+
+        <a class="arrow_up" href="#header" title="Наверх"></a>
+        <script src="js/arrow-up.js"></script>
+        <script src="js/modal-projects.js"></script>
+        <script src="js/scroll-check.js"></script>
     </body>
 </html>
