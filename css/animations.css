@@ -1,0 +1,51 @@
+/* Плавное появление */
+.animation.fadeIn {
+    opacity: 0;
+}
+
+.animation.fadeIn.show {
+    opacity: 1;
+    transition: all 1.5s;
+}
+
+/* Плавное появление слева */
+.animation.fadeInLeft {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.animation.fadeInLeft.show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateX(0%);
+}
+
+p.animation.fadeInLeft.show {
+    opacity: 1;
+    transition: all 1.2s .1s;
+    transform: translateX(0%);
+}
+
+/* Плавное появление снизу */
+.animation.fadeInUp {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.animation.fadeInUp.show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+}
+
+/* Плавный зум */
+.animation.zoomIn {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.animation.zoomIn.show {
+    opacity: 1;
+    transition: all .8s;
+    transform: scale(1);
+}
