@@ -1,9 +1,11 @@
+/* Для плавной прокрутки */
 @media (prefers-reduced-motion: no-preference) {
     :root {
         scroll-behavior: smooth;
     }
 }
 
+/* Небольшой reset, основные параметры */
 *,
 *::before,
 *::after {
@@ -54,7 +56,33 @@ a {
     margin: 0 auto;
 }
 
-/* header ------------------------------------------------------ */
+.arrow_up {
+    background-image: url("../img/arrow_up.png");
+    background-size: cover;
+    opacity: 0;
+
+    width: 50px;
+    height: 70px;
+
+    position: fixed;
+    left: 92%;
+    top: 84%;
+
+    transition: .3s;
+}
+
+/* Стрелочка */
+.arrow_up.visible {
+    opacity: .8;
+}
+
+.arrow_up.visible:hover {
+    opacity: .95;
+    transform: scale(1.08);
+    top: 81%;
+}
+
+/* Шапка -------------------------------- */
 
 .header {
     background: url("../img/header-bg.jpg") center center / cover no-repeat;
@@ -140,7 +168,7 @@ a {
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, .5);
 }
 
-/* about ------------------------------------------------------- */
+/* О нас -------------------------------- */
 
 .about {
     padding: 110px 0 67px 0;
@@ -163,10 +191,10 @@ a {
     width: 567px;
 }
 
-/* gallery ----------------------------------------------------- */
+/* Наши работы -------------------------------- */
 
 .gallery {
-    padding: 110px 0;
+    padding: 110px 0 0;
     text-align: center;
     background: url("../img/gallery-bg2.jpg") no-repeat center center / cover fixed;
     color: #fff;
@@ -179,7 +207,7 @@ a {
 }
 
 .gallery img {
-    max-height: 350px;
+    max-height: 320px;
     margin: 0 20px 20px 0;
 
     transition: .5s;
@@ -189,6 +217,29 @@ a {
     cursor: pointer;
     transform: scale(1.025);
     box-shadow: 8px 8px 8px rgba(0, 0, 0, .5);
+}
+
+.project_label {
+    position: absolute;
+    left: 3%;
+    top: -10%;
+    z-index: 1;
+
+    font-family: var(--title-font);
+    font-size: 2.7em;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+    user-select: none;
+
+    opacity: 0;
+    transition: .5s;
+}
+
+.wrapper_project {
+    display: inline-block;
+}
+
+.gallery img:hover ~ .project_label {
+    opacity: .9;
 }
 
 .modal {
@@ -208,7 +259,6 @@ a {
 
     opacity: 0;
     visibility: hidden;
-
     transition: opacity .4s, visibility .4s;
 }
 
@@ -224,10 +274,8 @@ a {
     z-index: 1;
     margin: 30px 15px;
     background-color: white;
-    box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
 
     transform: scale(0);
-
     transition: transform .6s;
 }
 
@@ -235,18 +283,39 @@ a {
     transform: scale(1);
 }
 
-.modal_box span[id^=close] {
+.modal_title {
+    display: inline-block;
+    width: 90vw;
+    margin: 20px auto 0;
+    padding: 20px 0;
+    background-color: #fff;
+
+    transform: translateY(-100%);
+    transition: transform .6s;
+}
+
+.modal.open .modal_title {
+    transform: translateY(0);
+}
+
+.modal_label {
+    font-family: var(--title-font);
+    font-size: 2.7em;
+    text-decoration: underline;
+}
+
+.modal_title span[id^=close] {
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 5px;
     cursor: pointer;
-    transform: scale(1.2);
+    font-size: 1.6em;
 
     transition: transform .3s;
 }
 
-.modal_box span[id^=close]:hover {
+.modal_title span[id^=close]:hover {
     transform: rotate(90deg);
     cursor: pointer;
 }
@@ -255,7 +324,14 @@ a {
     overflow: hidden;
 }
 
-/* footer --------------------------------------------------------- */
+h2.more_projects {
+    border: none;
+    font-size: 2em;
+    text-transform: none;
+    margin: 40px 0 50px;
+}
+
+/* Подвал -------------------------------- */
 
 .footer-text {
     display: flex;
@@ -263,30 +339,9 @@ a {
 
     font-family: var(--text-font);
     font-weight: normal;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .footer-text p {
     margin-right: 67px;
-}
-
-.arrow_up {
-    background-image: url("../img/arrow_up.svg");
-    background-size: contain;
-    opacity: .8;
-
-    display: block;
-    width: 64px;
-    height: 64px;
-
-    position: fixed;
-    left: 92%;
-    top: 84%;
-
-    transition: .3s;
-}
-
-.arrow_up:hover {
-    opacity: .95;
-    transform: scale(1.05);
 }
