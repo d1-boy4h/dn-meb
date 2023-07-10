@@ -15,14 +15,11 @@
     padding: 0;
 }
 
-*::selection {
-    background-color: #3b80b7;
-    color: #fff;
-}
-
+/* Основные переменные */
 :root {
     --title-font: "Opium New C", serif;
     --text-font: "Open Sans", sans-serif;
+    --main-color: #3b80b7;
 }
 
 body {
@@ -56,6 +53,13 @@ a {
     margin: 0 auto;
 }
 
+/* Выделение */
+*::selection {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+/* Стрелочка */
 .arrow_up {
     background-image: url("../img/arrow_up.png");
     background-size: cover;
@@ -71,7 +75,6 @@ a {
     transition: .3s;
 }
 
-/* Стрелочка */
 .arrow_up.visible {
     opacity: .8;
 }
