@@ -14,6 +14,9 @@
         <!--[if lt IE 9]>
             <script src="js/html5shiv.js"></script>
         <![endif]-->
+        
+        <!-- LiveReload -->
+        <script src="http://localhost:35729/livereload.js?snipver=1"></script>
     </head>
     <body id="body">
 
@@ -89,8 +92,12 @@
                         <span id="close-project-1">&times;</span>
                     </div>
                     <div class="modal_box">
-                        <img src="img/projects/1/img1.jpg" alt="Image 1">
-                        <img src="img/projects/1/img2.jpg" alt="Image 2">
+                        <a data-fslightbox="project-1" href="img/projects/1/img1.jpg">
+                            <img src="img/projects/1/img1.jpg" alt="Image 1">
+                        </a>
+                        <a data-fslightbox="project-1" href="img/projects/1/img2.jpg">
+                            <img src="img/projects/1/img2.jpg" alt="Image 2">
+                        </a>
                         <img src="img/projects/1/img3.jpg" alt="Image 3">
                         <img src="img/projects/1/img4.jpg" alt="Image 4">
                         <img src="img/projects/1/img5.jpg" alt="Image 5">
@@ -261,5 +268,6 @@
         <script src="js/arrow-up.js"></script>
         <script src="js/modal-projects.js"></script>
         <script src="js/scroll-check.js"></script>
+        <script src="js/fslightbox.js"></script>
     </body>
 </html>
