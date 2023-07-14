@@ -26,6 +26,18 @@ p.animation.fadeInLeft.show {
     transform: translateX(0%);
 }
 
+/* Плавное появление справа */
+.animation.fadeInRight {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.animation.fadeInRight.show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateX(0%);
+}
+
 /* Плавное появление снизу */
 .animation.fadeInUp {
     opacity: 0;
