@@ -5,6 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Дон-Мебель - Купить кухню на заказ в Краснодаре</title>
         
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
         <!-- css -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/fonts.css">
@@ -34,10 +43,10 @@
                             <a href="#gallery">Наши работы</a>
                         </li>
                         <li>
-                            <a href="#">Партнёры</a>
+                            <a href="#partners">Партнёры</a>
                         </li>
                         <li>
-                            <a href="#">Отзывы</a>
+                            <a href="#reviews">Отзывы</a>
                         </li>
                         <li>
                             <a href="#">Контакты</a>
@@ -48,7 +57,34 @@
                 <div class="offer">
                     <h1 class="animation fadeInLeft">Дон-Мебель</h1>
                     <p class="animation fadeInLeft">Производство кухонной мебели на заказ</p>
-                    <a class="btn" href="#">Заказать замер</a>
+
+                    <!-- Заказать замер -->
+                    <button id="open-order-modal" class="order_modal_button" type="button">Заказать бесплатный замер</button>
+                    <div class="modal" id="order-modal">
+                        <div class="modal_box">
+                            <span id="close-order-modal">&times;</span>
+                            <span class="order_modal_title">Заказать бесплатный замер</span>
+                            <span class="order_modal_desc">Оставьте свой номер телефона, чтобы наш мастер перезвонил вам, помог просчитать кухню или согласовал время замера.</span>
+                            <form id="order-form" class="order_form" action="#" method="post">
+
+                                <!-- Hidden Required Fields -->
+                                <input type="hidden" name="project_name" value="Дон Мебель">
+                                <input type="hidden" name="admin_email" value="d1.boy4h@gmail.com">
+                                <input type="hidden" name="form_subject" value="Замер">
+                                <!-- END Hidden Required Fields -->
+
+                                <div class="form_name">
+                                    <input id="form-name" class="form_input" name="Name" type="text" placeholder=" " required>
+                                    <label for="form-name" class="form_label">Ваше имя</label>
+                                </div>
+                                <div class="form_tel">
+                                    <input id="form-tel" class="form_input" name="Tel" type="tel" placeholder=" " required>
+                                    <label for="form-tel" class="form_label">Ваш телефон</label>
+                                </div>
+                                <button class="form_button">Заказать звонок</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -62,13 +98,28 @@
                     <div class="desc-left animation fadeIn">
                         <h3>Кухни от производителя</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita temporibus doloremque iste illum, consectetur, repudiandae porro cum fugiat exercitationem ut praesentium blanditiis dolore harum sequi eligendi consequuntur voluptatum, eos sapiente? Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Delectus, explicabo, officiis. Officiis amet voluptates mollitia voluptatibus neque, iure illum, eum. Quae, nostrum. Molestias officia, ullam soluta, repellat veritatis dignissimos fugit.
+                            Если вы хотите привнести в помещение особенность и индивидуальность или сделать гарнитур под необходимую геометрию помещения, то вам стоит заказать кухонный гарнитур напрямую от производителя. Не важно, какой формы комната — кухня от производителя идеально впишется в необходимый стиль помещения и при этом не отнимет жизненного пространства. Различный дизайн фасадов вкупе с отменным качеством производства позволяет создать долговечный гарнитур, который прослужит десятки лет, даже при интенсивном использовании.
+
+                        </p>
+                        <p>
+                            На производстве можно реализовать кухню с максимально удобной функциональностью. Налаженный процесс изготовления гарнитуров позволит выполнить мебель быстро и по минимальной стоимости.
+                        </p>
+                        <p>
+                            Особенно для нестандартных кухонь лучшим предложением будет выполнение под заказ, без посредников. Кухни, изготовленные на заказ от производителя, наиболее рационально приобретать для помещений с нестандартными размерами, но и для стандартных планировок они отлично подойдут.
                         </p>
                     </div>
                     <div class="desc-right animation fadeIn">
-                        <h3>Lorem Ipsum</h3>
+                        <h3>Что мы предлагаем?</h3>
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ut, officiis voluptatem a accusantium saepe velit corporis iure nemo hic praesentium sunt at nobis inventore, quos eligendi! Molestias eum, reprehenderit.
+                            Кухня, заказанная в нашем салоне напрямую от производителя включает актуальные и самые лучшие позиции:
+                        </p>
+                        <ul>
+                            <li>Для расширения комнаты подобраны варианты в светлых тонах, с обилием стеклянных хромированных вариантов, с наличием освещения.</li>
+                            <li>Атрибутика и мебельные элементы для углового размещения. Эргономичные и вместительные этажерки, шкафчики с системой купе. Такие элементы отлично подойдут для малогабаритных квартир.</li>
+                            <li>Обилие натуральных материалов для эмоционального комфорта, без темных тонов и эффекта загромождения.</li>
+                        </ul>
+                        <p>
+                            Любые и самые эксклюзивные замыслы воплощаются в жизнь при заказе кухни от производителя. В нашем салоне гарантирован квалифицированный, высокий уровень обслуживания для каждого покупателя!
                         </p>
                     </div>
                 </div>
@@ -340,8 +391,68 @@
                     </div>
                 </div>
 
-                <h2 class="more_projects animation fadeInUp">Со временем здесь будет больше работ :)</h2>
+                <div class="more_projects animation fadeInUp">
+                    <span>Больше работ в нашей группе</span>
+                    <a href="https://vk.com/id651448861" target="_blank">
+                        <img src="img/vk.png" alt="VK">
+                    </a>
+                </div>
+                
+            </div>
+        </section>
 
+        <!-- Партнёры -------------------------------- -->
+
+        <section id="partners" class="partners">
+            <div class="container">
+                <div class="slider_title">
+                    <h2 class="animation fadeInLeft">Наши партнёры</h2>
+                    <div class="slider_buttons">
+                        <button class="slider_prev" type="button">Назад</button>
+                        <button class="slider_next" type="button">Вперёд</button>
+                    </div>
+                </div>
+                <div class="slider animation fadeInRight">
+                    <div class="slider_line">
+                        <img src="img/partners/1_blum.png" alt="Blum">
+                        <img src="img/partners/2_fgv.png" alt="FGV">
+                        <img src="img/partners/3_boyard.png" alt="BOYARD">
+                        <img src="img/partners/4_unihopper.png" alt="Unihopper">
+                        <img src="img/partners/5_mf.png" alt="MF">
+                        <img src="img/partners/6_hettich.png" alt="Hettich">
+                        <img src="img/partners/7_egger.png" alt="Egger">
+                        <img src="img/partners/8_lamarty.png" alt="Lamarty">
+                        <img src="img/partners/9_kronospan.png" alt="Kronospan">
+                        <img src="img/partners/10_candy.png" alt="Candy">
+                        <img src="img/partners/11_drgans.png" alt="Dr. Gans">
+                        <img src="img/partners/12_vestel.png" alt="Vestel">
+                        <img src="img/partners/13_midea.png" alt="Midea">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы -------------------------------- -->
+
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h2 class="animation fadeInLeft">Отзывы</h2>
+                <div class="reviews_blocks">
+                    <div class="reviews_block review_1 animation zoomIn">
+                        <div class="review_quot"></div>
+                        <span class="review_name">Елена А.</span>
+                        <p class="review_desc">
+                            Хороший мебельный центр. Заказывала кухни себе и маме в Дон-Мебели, а также гардеробную и шкафы-купе. Очень понравилось качество. Делают на заказ, всё вошло идеально! И Диван брали, тоже класс!
+                        </p>
+                    </div>
+                    <div class="reviews_block review_2 animation zoomIn">
+                        <div class="review_quot"></div>
+                        <span class="review_name">НИКА</span>
+                        <p class="review_desc">
+                            Заказывали гарнитур кухонный, не стандартный , качество хорошее, большой цветовой выбор , фурнитура качественная, мойку и вытяжку тоже  у Дон-Мебели покупали, при проектировании Виталий подсказал как лучше с функциональной и визуальной точки зрения обыграть дизайн, цена приятно удивила, даже дешевле чем леруа мерлене, а тем более в другом салоне, установка и доставка бесплатно, эт плюс 30-35 к бюджету, единственный минус, надо запастись терпением полтора месяца ждали , но установщик Владимир всë установил супер, спасибо Дон-Мебели,советую
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -349,7 +460,7 @@
 
         <footer id="footer" class="footer">
             <div class="container">
-                <div class="footer-text">
+                <div class="footer_text">
                     <p>Дон-Мебель Краснодар © 2023<br>Все права защищены.</p>
                     <p>Mozbo & d1_boy4h</p>
                 </div>
@@ -359,9 +470,8 @@
         <!-- Прочие скрипты -------------------------------- -->
 
         <a class="arrow_up" href="#header" title="Наверх"></a>
-        <script src="js/arrow-up.js"></script>
-        <script src="js/modal-projects.js"></script>
-        <script src="js/scroll-check.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="js/fslightbox.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
