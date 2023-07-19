@@ -5,7 +5,7 @@
 
 .animation.fadeIn.show {
     opacity: 1;
-    transition: all 1.5s;
+    transition: all 1.2s;
 }
 
 /* Плавное появление слева */
@@ -20,7 +20,13 @@
     transform: translateX(0%);
 }
 
-p.animation.fadeInLeft.show {
+/* Плавное появление слева (медленное) */
+.animation.fadeInLeftSlow {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.animation.fadeInLeftSlow.show {
     opacity: 1;
     transition: all 1.2s .1s;
     transform: translateX(0%);
@@ -45,6 +51,18 @@ p.animation.fadeInLeft.show {
 }
 
 .animation.fadeInUp.show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+}
+
+/* Плавное появление сверху */
+.animation.fadeInDown {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.animation.fadeInDown.show {
     opacity: 1;
     transition: all 1s;
     transform: translateY(0%);
