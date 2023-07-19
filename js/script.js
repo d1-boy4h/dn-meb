@@ -32,8 +32,9 @@ for (let elm of elements) {
   observer.observe(elm);
 }
 
-/* ---------------- Форма отправки ---------------- */
+/* ---------------- Обработка форм ---------------- */
 
+// Заказать бесплатный замер
 $(document).ready(function() {
 
     // E-mail Ajax Send
@@ -52,7 +53,48 @@ $(document).ready(function() {
         });
         return false;
     });
+});
 
+// Оставить отзыв
+$(document).ready(function() {
+
+    // E-mail Ajax Send
+    $("#review-form").submit(function() {
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "../php/mail.php",
+            data: th.serialize()
+        }).done(function() {
+            alert("Thank you!"); // Действие при успешной отправке
+            setTimeout(function() {
+                // Done Functions
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
+});
+
+// Заказать замер (скидка)
+$(document).ready(function() {
+
+    // E-mail Ajax Send
+    $("#order-form-sale").submit(function() {
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "../php/mail.php",
+            data: th.serialize()
+        }).done(function() {
+            alert("Thank you!"); // Действие при успешной отправке
+            setTimeout(function() {
+                // Done Functions
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
 });
 
 /* ---------------- Модальные окна ---------------- */
@@ -91,6 +133,17 @@ document.getElementById("open-order-modal").addEventListener("click", function()
 
 document.getElementById("close-order-modal").addEventListener("click", function() {
     document.getElementById("order-modal").classList.remove("open");
+    document.getElementById("body").classList.remove("locked");
+});
+
+// Оставить отзыв
+document.getElementById("open-review-modal").addEventListener("click", function() {
+    document.getElementById("review-modal").classList.add("open");
+    document.getElementById("body").classList.add("locked");
+});
+
+document.getElementById("close-review-modal").addEventListener("click", function() {
+    document.getElementById("review-modal").classList.remove("open");
     document.getElementById("body").classList.remove("locked");
 });
 
