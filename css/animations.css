@@ -1,0 +1,108 @@
+/* Плавное появление */
+.animation.fadeIn {
+  opacity: 0;
+}
+
+.animation.fadeIn.show {
+  opacity: 1;
+  transition: all 1.2s;
+}
+
+/* Плавное появление слева */
+.animation.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.animation.fadeInLeft.show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateX(0%);
+}
+
+/* Плавное появление слева (медленное) */
+.animation.fadeInLeftSlow {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.animation.fadeInLeftSlow.show {
+  opacity: 1;
+  transition: all 1.2s .1s;
+  transform: translateX(0%);
+}
+
+/* Плавное появление справа */
+.animation.fadeInRight {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.animation.fadeInRight.show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateX(0%);
+}
+
+/* Плавное появление снизу */
+.animation.fadeInUp {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.animation.fadeInUp.show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+
+/* Плавное появление сверху */
+.animation.fadeInDown {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.animation.fadeInDown.show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+
+/* Плавный зум */
+.animation.zoomIn {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.animation.zoomIn.show {
+  opacity: 1;
+  transition: all .8s;
+  transform: scale(1);
+}
+
+/* Успешная заявка */
+@keyframes flip {
+  0% {
+    transform: rotateX(-180deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  15% {
+    transform: rotateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  85% {
+    transform: rotateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    transform: rotateX(-180deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "Opium New C";
+  src: url("fonts/opiumnewc.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Opium New C";
+  src: url("fonts/opiumnewc_italic.otf");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Opium New C";
+  src: url("fonts/opiumnewc_bold.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Opium New C";
+  src: url("fonts/opiumnewc_bolditalic.otf");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}

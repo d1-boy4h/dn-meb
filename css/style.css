@@ -1,0 +1,904 @@
+/* Для плавной прокрутки */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Небольшой reset, основные параметры */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Основные переменные */
+:root {
+  --title-font: "Opium New C", serif;
+  --text-font: "Open Sans", sans-serif;
+  --main-color: #3b80b7;
+}
+
+body {
+  font-family: var(--text-font);
+  font-size: 16px;
+  font-weight: 700;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-family: var(--title-font);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 50px;
+  margin-bottom: 58px;
+}
+
+h3 {
+  font-size: 25px;
+  margin-bottom: 38px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+/* Выделение */
+*::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+/* Стрелочка */
+.arrow_up {
+  background-image: url('../img/arrow_up.png');
+  background-size: cover;
+  opacity: 0;
+
+  width: 50px;
+  height: 70px;
+
+  position: fixed;
+  left: 92%;
+  top: 84%;
+
+  transition: .3s;
+}
+
+.arrow_up.visible {
+  opacity: .8;
+}
+
+.arrow_up.visible:hover {
+  opacity: .95;
+  transform: scale(1.08);
+  top: 81%;
+}
+
+/* Шапка -------------------------------- */
+
+.header {
+  background: url('../img/bg_header.webp') center center / cover no-repeat;
+  padding-top: 57px;
+  color: #fff;
+  padding-bottom: 322px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 60px;
+  width: 85px;
+}
+
+.header a {
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li a {
+  text-transform: uppercase;
+  font-size: 14px;
+
+  transition: all .3s ease;
+}
+
+.menu li a:hover {
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid #fff;
+}
+
+.menu li {
+  display: block;
+  margin-right: 40px;
+}
+
+.nav_contacts {
+  font-size: 17px;
+  margin-left: auto;
+  text-align: right;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.offer {
+  text-transform: uppercase;
+  margin-top: 216px;
+}
+
+.offer h1 {
+  font-size: 100px;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.offer p {
+  font-family: var(--title-font);
+  font-size: 30px;
+  margin-bottom: 19px;
+}
+
+.order_modal_button {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+
+  padding: 17px 40px;
+  width: 370px;
+
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.order_modal_button:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, .5);
+}
+
+/* Заказать замер */
+#order-modal .modal_box {
+  width: 100%;
+  background: #fff;
+}
+
+.order_modal_title {
+  display: block;
+  font-family: var(--title-font);
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.order_modal_desc {
+  display: block;
+  margin: 15px 0 50px;
+  text-transform: none;
+  font-weight: normal;
+  text-align: center;
+}
+
+.order_form,
+.order_form_sale {
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-transform: none;
+  text-align: center;
+}
+
+.form_name,
+.form_tel,
+.form_review {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.form_tel {
+  margin-bottom: 50px;
+}
+
+.form_label {
+  position: absolute;
+  top: 0;
+  left: 360px;
+  z-index: -1;
+  color: #9e9e9e;
+
+  transition: .3s;
+}
+
+.form_input {
+  width: 300px;
+  padding: 0 0 10px 0;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  background-color: transparent;
+  outline: none;
+
+  transition: .3s;
+}
+
+.form_input:focus~.form_label,
+.form_input:not(:placeholder-shown)~.form_label {
+  top: -18px;
+  left: 340px;
+  font-size: 12px;
+  color: #afafaf;
+}
+
+.form_input:focus {
+  border-color: var(--main-color);
+}
+
+.form_button {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  background-color: var(--main-color);
+
+  outline: none;
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.form_button:hover,
+.form_button:focus {
+  background-color: rgba(0, 113, 240, .7);
+  box-shadow: 0 0 10px 2px rgba(15, 168, 255, .4);
+}
+
+.consent {
+  display: block;
+  margin: 25px auto 0;
+  font-size: .75em;
+  color: #9b9b9b;
+}
+
+/* О нас -------------------------------- */
+
+.about {
+  padding: 110px 0 67px 0;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description p,
+li {
+  font-family: var(--text-font);
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.62em;
+  margin-bottom: 20px;
+}
+
+.description p {
+  text-indent: 1.5em;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+.description li {
+  margin-left: 2em;
+}
+
+.desc-left,
+.desc-right {
+  width: 567px;
+}
+
+/* Наши работы -------------------------------- */
+
+.gallery {
+  padding: 110px 0 0;
+  text-align: center;
+  background: url('../img/bg_gallery.webp') no-repeat center center / cover fixed;
+  color: #fff;
+}
+
+.gallery h2 {
+  border-bottom: 3px solid #fff;
+  padding: 0 .7em .2em;
+  display: inline-block;
+}
+
+.gallery img {
+  max-height: 320px;
+  margin: 0 20px 20px 0;
+
+  transition: .5s;
+}
+
+.gallery .wrapper_project img:hover,
+.gallery .modal img:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, .5);
+}
+
+.project_label {
+  position: absolute;
+  left: 3%;
+  top: -10%;
+  z-index: 1;
+
+  font-family: var(--title-font);
+  font-size: 2.7em;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+  user-select: none;
+
+  opacity: 0;
+  transition: .5s;
+}
+
+.wrapper_project {
+  display: inline-block;
+}
+
+.gallery img:hover~.project_label {
+  opacity: .9;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, .5);
+  color: #000;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s, visibility .4s;
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal_box {
+  position: relative;
+  width: 90vw;
+  padding: 45px;
+  z-index: 1;
+  margin: 30px 0;
+  background-color: #fff;
+
+  transform: scale(0);
+  transition: transform .6s;
+}
+
+.modal.open .modal_box {
+  transform: scale(1);
+}
+
+.modal_title {
+  display: inline-block;
+  width: 90vw;
+  margin: 20px auto 0;
+  padding: 20px 0;
+  background-color: #fff;
+
+  transform: translateY(-100%);
+  transition: transform .6s;
+}
+
+.modal.open .modal_title {
+  transform: translateY(0);
+}
+
+.modal_label {
+  font-family: var(--title-font);
+  font-size: 2.7em;
+  text-decoration: underline;
+}
+
+.modal_title span[id^=close],
+.modal_box #close-order-modal,
+.modal_box #close-review-modal,
+.modal_box #close-personal-data-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 2em;
+
+  transition: transform .3s;
+}
+
+.modal_title span[id^=close]:hover,
+.modal_box #close-order-modal:hover,
+.modal_box #close-review-modal:hover,
+.modal_box #close-personal-data-modal:hover {
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.locked {
+  overflow: hidden;
+}
+
+.more_projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.more_projects span {
+  font-family: var(--title-font);
+  font-size: 1.5em;
+  margin-right: .5em;
+}
+
+.more_projects a img {
+  max-width: 55px;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.more_projects a img:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, .3);
+}
+
+/* Партнёры -------------------------------- */
+
+@keyframes slider_movement {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: 3962px;
+  }
+}
+
+.partners {
+  padding: 110px 0 20px;
+  background-color: #f1f1f1;
+}
+
+.partners h2 {
+  display: inline-block;
+}
+
+.partners button {
+  background: #fff;
+  border: none;
+  border-radius: 4px;
+
+  padding: 10px 20px;
+  margin: 20px 10px 0;
+
+  font-size: .9rem;
+
+  transition-property: background-color, color;
+  transition-duration: .3s;
+}
+
+.partners button:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.slider {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 50px;
+}
+
+.slider img {
+  background-color: #fff;
+  border-radius: 20px;
+  max-height: 128px;
+  padding: 15px;
+  margin-right: 15px;
+}
+
+.slider img:last-child {
+  margin-right: 0;
+}
+
+.slider_line {
+  display: flex;
+  height: 128px;
+  width: 1024px;
+
+  position: relative;
+  transition-property: left, right;
+  transition-duration: .3s;
+  animation: slider_movement 30s linear infinite alternate;
+}
+
+.slider_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Отзывы -------------------------------- */
+
+.reviews {
+  padding: 110px 0 20px;
+}
+
+.reviews_blocks {
+  display: flex;
+}
+
+.reviews_block {
+  /* max-width: 500px; */
+  padding: 40px;
+  margin-right: 30px;
+  border: 2px solid var(--main-color);
+}
+
+.reviews_block:last-child {
+  margin-right: 0;
+}
+
+.review_quot {
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url('../img/quot.png') no-repeat center / 50px;
+}
+
+.review_name {
+  display: block;
+  padding: 10px 0 90px 130px;
+  margin-bottom: 20px;
+  background: url('../img/avatar.png') 5px 5px / 100px no-repeat;
+
+  font-size: 1.1em;
+}
+
+.review_desc {
+  font-weight: normal;
+  line-height: 1.62em;
+  text-indent: 1.5em;
+}
+
+.review_modal_button {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: #000;
+  background: none;
+  border: 1px solid #000;
+
+  padding: 17px 40px;
+  margin: 25px 0 25px 75%;
+
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.review_modal_button:hover {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  color: #fff;
+}
+
+/* Написать отзыв */
+#review-modal .modal_box {
+  width: 100%;
+  background: #fff;
+}
+
+.review_modal_title,
+.personal_data_modal_title {
+  display: block;
+  font-family: var(--title-font);
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  ;
+}
+
+.review_form {
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-transform: none;
+  text-align: center;
+}
+
+.review_form .form_input {
+  width: 450px;
+  padding-left: 12px;
+}
+
+.review_form .form_label {
+  top: 0;
+  left: 60px;
+}
+
+.review_form .form_input:focus~.form_label,
+.review_form .form_input:not(:placeholder-shown)~.form_label {
+  top: -18px;
+  left: 45px;
+  font-size: 12px;
+  color: #afafaf;
+}
+
+.form_input_review {
+  width: 450px;
+  height: 200px;
+  padding: 12px;
+  padding-top: 25px;
+  border: 2px solid #e0e0e0;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+
+  transition: .3s;
+}
+
+.form_label_review {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: -1;
+  color: #9e9e9e;
+
+  transition: .3s;
+}
+
+.form_input_review:focus~.form_label_review,
+.form_input_review:not(:placeholder-shown)~.form_label_review {
+  top: 10px;
+  left: 45px;
+  font-size: 12px;
+  color: #afafaf;
+}
+
+.form_input_review:focus {
+  border-color: var(--main-color);
+}
+
+/* Получите бесплатную консультацию -------------------------------- */
+
+.consultation {
+  padding: 50px 0;
+  background-color: #f1f1f1;
+  background-image: repeating-linear-gradient(135deg, rgba(189, 189, 189, 0.1) 0px, rgba(189, 189, 189, 0.1) 2px, transparent 2px, transparent 4px), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+.consultation h2,
+h3 {
+  text-align: center;
+}
+
+.consultation h2 {
+  margin-bottom: 0;
+}
+
+.consultation h3 {
+  margin-bottom: 50px;
+}
+
+.sale {
+  color: #f71113;
+}
+
+.form_inputs {
+  display: flex;
+  justify-content: center;
+}
+
+#form-name-sale {
+  margin-right: 50px;
+}
+
+.order_form_sale .form_label {
+  z-index: -1;
+  left: 30px;
+}
+
+.order_form_sale .form_input:focus~.form_label,
+.order_form_sale .form_input:not(:placeholder-shown)~.form_label {
+  top: -18px;
+  left: 0;
+  font-size: 12px;
+  color: #afafaf;
+}
+
+/* Контакты -------------------------------- */
+
+.contacts {
+  padding: 110px 0 60px;
+  background: url('../img/bg_contacts.jpg') no-repeat center / cover;
+  color: #fff;
+}
+
+.contacts h2 {
+  border-left: 40px solid #fff;
+  padding-left: 20px;
+}
+
+.contacts_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contacts_left li {
+  padding-left: 45px;
+  margin-left: 20px;
+
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  list-style: none;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, .4);
+}
+
+.contacts_left span {
+  display: block;
+  margin: 5px 0 30px;
+
+  color: #fff;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.contacts_left a {
+  color: #fff;
+}
+
+.contact_telephone {
+  background: url('../img/contact_telephone.png') top left / 30px no-repeat;
+}
+
+.contact_email {
+  background: url('../img/contact_email.png') top left / 30px no-repeat;
+}
+
+.contact_address {
+  background: url('../img/contact_address.png') top left / 30px no-repeat;
+}
+
+.contact_schedule {
+  background: url('../img/contact_schedule.png') top left / 30px no-repeat;
+}
+
+/* Подвал -------------------------------- */
+
+.footer_text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+
+  font-family: var(--text-font);
+  font-weight: normal;
+  font-size: .8em;
+}
+
+/* Обработка персональных данных -------------------------------- */
+
+.personal_data {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #afafaf;
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+#personal-data-modal p {
+  font-weight: normal;
+  text-indent: 1.5em;
+  margin-bottom: 30px;
+
+}
+
+.personal_data:hover,
+.personal_data:active {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+#personal-data-modal .modal_box {
+  width: 100%;
+  background: #fff;
+}
+
+/* Заявка успешно отправлена -------------------------------- */
+
+.successfully,
+.successfully_review {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30%;
+  z-index: 3;
+
+  margin: 0 auto;
+  width: 720px;
+
+  color: #fff;
+  background-color: rgba(134, 193, 49, .8);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+  font-size: 1.2em;
+  font-weight: normal;
+
+  display: flex;
+  align-items: center;
+
+  visibility: hidden;
+}
+
+.successfully_review {
+  width: 350px;
+}
+
+.successfully_mark,
+.successfully_review_mark {
+  background: url('../img/mark.png') center center / 30px no-repeat rgba(147, 207, 63, .8);
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.successfully.show,
+.successfully_review.show {
+  visibility: visible;
+  animation: flip 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+}
